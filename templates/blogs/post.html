@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+   <p>Do you want to <a href="{% url 'add_post'%}">Add a post?</a></p>
+    <ul>
+        {% for post in post %}
+        <li>
+            
+            <p>{{post.date_added|date:'M d, Y'}}</p>
+            <h4>{{post.title}}</h4>
+            <p>{{post.content|linebreaks}}</p>
+
+        </li>
+        {% endfor %}
+
+
+    </ul>
+
+{% endblock content%}
