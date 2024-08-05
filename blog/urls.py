@@ -20,6 +20,8 @@ from blogs import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #url of the base by example
-    path('', include('blogs.urls'))
+    #url of the blogs app
+    path('', include('blogs.urls')),
+    #url of the users app
+    path('users/', include('users.urls')),
 ]
