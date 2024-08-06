@@ -1,8 +1,9 @@
 from django.urls import path
-from blogs import views
+from django.contrib.auth.views import LoginView
+from . import views
 
 urlpatterns = [
     #Login page
-    path('login/', views.login, name='login'),
+    path('login/', LoginView.as_view(), name='login'),
     
 ]

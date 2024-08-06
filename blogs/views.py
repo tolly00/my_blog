@@ -25,5 +25,4 @@ def add_post(request):
     context={'form':form}
     return render(request, 'blogs/add_post.html',context)
 
-def login(request):
-    return render(request, 'users/login.html')
+
