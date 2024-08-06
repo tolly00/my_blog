@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect
+from django.contrib.auth.views import LogoutView
+from django.urls import reverse
 
 # Create your views here.
-def login(request):
-    return render(request, 'registration/login.html')
+# Logout the user
+def logout_view(request):
+    return redirect(reverse('blogs/index.html'))
