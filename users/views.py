@@ -21,7 +21,7 @@ def register_view(request):
         
         if form.is_valid():
             new_user=form.save()
-            # log the user and redirect to home page
+            #log the user and redirect to home page
             authenticated_user=authenticate(username=new_user.username,password=request.POST['password1'])
             LoginView.as_view(request,authenticated_user)
             return HttpResponseRedirect(reverse('index'))

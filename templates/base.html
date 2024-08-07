@@ -8,7 +8,8 @@
 <body>
             <h2>My BlogPost Application</h2>
             <p>
-                <a href="/">Home</a><br>
+                <a href="/">Home</a>
+                <a href="{% url 'post' %}">Post</a><br>
                 {% if user.is_authenticated %}
                 Hello, {{ user.username }}.
                 <br>
