@@ -11,7 +11,7 @@
                 <a href="/">Home</a>
                 <a href="{% url 'post' %}">Post</a><br>
                 {% if user.is_authenticated %}
-                Hello, {{ user.username }}.
+                Hello, {{ user.username }}
                 <br>
                 <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
