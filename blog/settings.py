@@ -126,3 +126,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #My settings
 LOGIN_URL='/users/login/'
+
+#settings for django-bootstrap5
+BOOTSTRAP5={
+    'include_jquery': True,
+}
