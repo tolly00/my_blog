@@ -3,22 +3,30 @@
 {% load django_bootstrap5 %}
 
 {% block header %}
+    <div class="center my-4">
         <h3>Log in to your account</h3>
+    </div>
+        
 {% endblock header %}
 {% block content %}
-
-    {%if form.errors%}
-    <p>your username and password didn't match. please try again.</p>
-    {%endif%}
+<div class="px-3">
+    <div class="alert alert-danger" role="alert" {% if not form.errors %} style="display:none;" {% endif %}>
+        Your username and password didn't match. Please try again.
+    </div>
     
 
-    <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <button name="submit">login</button>
-    <input type="hidden" name="next" value="{% url 'index'%}">
+    <form method="post" action="{% url 'login' %}" class="needs-validation col-lg-4 col-md-12 mx-auto form" novalidate>
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        
+        <div class="d-grid gap-2 d-md-block ">
+            <button class="btn btn-primary btn-block btn-lg" name="submit">Login</button>
+            <input type="hidden" name="next" value="{% url 'index' %}">
+        </div>
     </form>
+
+</div>
+   
 
 {% endblock content %}
 
