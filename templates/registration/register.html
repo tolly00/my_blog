@@ -1,9 +1,16 @@
 {% extends "base.html" %}
+{% load django_bootstrap5 %}
 {% block content %}
+<div class="px-3 col-lg-4 col-md-12">
     <form method="post" action="{% url 'register' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">register</button>
-    <input type="hidden" name="next" value="{% url 'index' %}" />
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% block buttons %}
+         <button name="submit" class="btn btn-primary">register</button>
+        {% endblock buttons %}
+        
+        <input type="hidden" name="next" value="{% url 'index' %}" />
     </form>
+</div>
+   
 {% endblock content %}
