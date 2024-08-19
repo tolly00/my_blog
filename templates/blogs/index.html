@@ -8,14 +8,54 @@
 
 {% block content %}
 <div class="mx-2">
-    <h6>
-        <a href="{% url 'register' %}">Register an account</a> to make
-        your own Learning Log, and list the topics you're learning about.
-        </h6>
-        <h6>
-        Whenever you learn something new about a topic, make an entry
-        summarizing what you've learned.
-        </h6>
+    
+    <!-- Section Héro -->
+    <section class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1>Bienvenue sur Votre Blog</h1>
+            <p class="lead">Découvrez les dernières tendances et conseils dans [votre niche ou sujet].</p>
+            <a href="#" class="btn btn-light btn-lg">Explorer</a>
+        </div>
+    </section>
+
+    <!-- Articles Récents -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">Articles Récents</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="image1.jpg" class="card-img-top" alt="Article 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre de l'article 1</h5>
+                            <p class="card-text">Un court extrait de l'article pour donner envie de lire la suite...</p>
+                            <a href="#" class="btn btn-primary">Lire plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="image2.jpg" class="card-img-top" alt="Article 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre de l'article 2</h5>
+                            <p class="card-text">Un court extrait de l'article pour donner envie de lire la suite...</p>
+                            <a href="#" class="btn btn-primary">Lire plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="image3.jpg" class="card-img-top" alt="Article 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Titre de l'article 3</h5>
+                            <p class="card-text">Un court extrait de l'article pour donner envie de lire la suite...</p>
+                            <a href="#" class="btn btn-primary">Lire plus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </div>
     
