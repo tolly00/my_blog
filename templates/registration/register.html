@@ -6,7 +6,7 @@
         {% csrf_token %}
         {% bootstrap_form form %}
         {% block buttons %}
-         <button name="submit" class="btn btn-primary">register</button>
+         <button name="submit" class="btn btn-danger">s'enregistrer</button>
         {% endblock buttons %}
         
         <input type="hidden" name="next" value="{% url 'index' %}" />

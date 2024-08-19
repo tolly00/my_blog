@@ -1,4 +1,5 @@
 {% load django_bootstrap5 %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,9 @@
 <body>
   <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'index' %}">My Blog</a>
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Logo de votre site" width="60" height="auto">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,13 +64,7 @@
                 <p>Ce site permettra de tenir les clients de Bertivox informer de nouvelles actualites le concernant afin de ne rien rater.</p>
             </div>
             <div class="col-md-4">
-                <h5>Liens utiles</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Accueil</a></li>
-                    <li><a href="#" class="text-white">À propos</a></li>
-                    <li><a href="#" class="text-white">Contact</a></li>
-                    <li><a href="#" class="text-white">Services</a></li>
-                </ul>
+                
             </div>
             <div class="col-md-4">
                 <h5>Contact</h5>
@@ -85,7 +82,7 @@
         </div>
     </div>
     <div class="text-center py-3 mt-3 border-top">
-        <p class="mb-0">&copy; 2024 Votre Site. Tous droits réservés.</p>
+        <p class="mb-0">&copy; 2024 Bertivox. Tous droits réservés.</p>
     </div>
   </footer>
   
