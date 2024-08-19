@@ -9,70 +9,105 @@
     {% bootstrap_javascript %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index' %}">My Blog</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'post' %}">Posts</a>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if user.is_authenticated %}                
-                <li class="nav-item">
-                    <a class="nav-link">Hello, {{ user.username }}.</a >
-                </li>                
-                <form method="post" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-light">Log out</button>
-                </form>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log in</a>
-                </li>
-                {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">My Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'post' %}">Posts</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}                
+            <li class="nav-item">
+                <a class="nav-link">Hello, {{ user.username }}.</a >
+            </li>                
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-light">Log out</button>
+            </form>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Log in</a>
+            </li>
+            {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
     
-            <h2 class="m-2">My BlogPost Application</h2>
-            <!--
-             <p>
-               
-               
-                {% if user.is_authenticated %}
-                Hello, {{ user.username }}
-                <br>
-                <form method="post" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <button type="submit">Logout</button>
-                </form>
-                {% else %}
-                <a href="{% url 'login' %}">log in</a>
-                <a href="{% url 'register' %}">register</a>
-                {% endif %}
-            </p>
-            
-            -->
+  <h2 class="m-2">My BlogPost Application</h2>
+  <!--
+    <p>
+      
+      
+      {% if user.is_authenticated %}
+      Hello, {{ user.username }}
+      <br>
+      <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button type="submit">Logout</button>
+      </form>
+      {% else %}
+      <a href="{% url 'login' %}">log in</a>
+      <a href="{% url 'register' %}">register</a>
+      {% endif %}
+  </p>
+  
+  -->
            
         {% block content %}{% endblock content %}
-        <br>
-        <footer>copyrigth by Bertivox</footer>
+  <br>
+  <footer class="bg-dark text-white pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>À propos</h5>
+                <p>Ce site permettra de tenir les clients de Bertivox informer de nouvelles actualites le concernant afin de ne rien rater.</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Liens utiles</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Accueil</a></li>
+                    <li><a href="#" class="text-white">À propos</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                    <li><a href="#" class="text-white">Services</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact</h5>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-telephone"></i> (+509) 4706 0275 | 33883397</li>
+                    <li><i class="bi bi-envelope"></i> bertivox01@gmail.com</li>
+                    <li><i class="bi bi-geo-alt"></i> 298 cite Larose, ave. Jn Jacques Dessalines, Saint-Marc, Haiti</li>
+                </ul>
+                <div class="mt-3">
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-3 mt-3 border-top">
+        <p class="mb-0">&copy; 2024 Votre Site. Tous droits réservés.</p>
+    </div>
+  </footer>
+  
    
 </body>
 </html>
