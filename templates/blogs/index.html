@@ -54,9 +54,23 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
+    <ul>
+        {% for post in post %}
+        <li>
+            
+            <p>{{post.date_added|date:'M d, Y'}}</p>
+            <h4>{{post.title}}</h4>
+            <p>{{post.content|linebreaks}}</p>
 
+        </li>
+        {% endfor %}
+
+
+    </ul>
+    
 </div>
     
 
